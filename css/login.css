@@ -1,0 +1,61 @@
+*{
+    font-family: "Montserrat";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+section{
+    background-image: url('/img/Login.jpg');
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+::placeholder{
+    color: white;
+}
+.userPassword,
+.userName{
+    width: 100%;
+    font-size: 15px;
+    outline: none;
+    margin-top: 20px;
+    opacity: 0.8;
+    border: 1px solid white;
+    background-color: inherit;
+    padding: 12px 40px;
+    border-radius: 4px;
+}
+
+.userPassword:focus{background-color: white;}
+.userName:focus{background-color: white;}
+
+button{
+    width: 100%;
+    margin-top: 40px;
+    padding: 12px 40px;
+    background-color: white;
+    border-radius: 4px;
+    font-size: 15px;
+    color: blue;
+    font-weight: bold;
+}
+.error{
+    display: none;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    font-size: 18px;
+    color: red;
+    font-weight: bold;
+}
