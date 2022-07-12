@@ -12,6 +12,7 @@
     <title>Home Page</title>
 </head>
 <body>
+    <div class="modals hide"></div>
     <header>
         <div class="container">
             <nav>
@@ -25,8 +26,7 @@
         </div>
     </header>
             <section class="results_sorting">
-                <p>Showing <span class="showing"></span></p>
-                <p class="">Result(s): <span class="result"></span></p>
+                <p>Showing Result(s): <span class="result"></span></p>
                 <button class="orderBtn"><img src="./img/calendar.png" alt="an image of calendar">Order by newest</button>
             </section>
             <main>
@@ -38,7 +38,14 @@
                             <ul class="bookmarksList"></ul>
                         </div>
                         <div class="main__books">
-                            <ul class="booksList"></ul>
+                            <ul class="booksList">
+                            </ul>
+                            <div class="pags-wrapper">
+                                <button class="prev"><</button>
+                            <ul class="pagination">
+                            </ul>
+                            <button class="next">></button>
+                            </div>
                         </div>
                     </div>
                 </div>
