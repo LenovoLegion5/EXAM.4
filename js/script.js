@@ -96,57 +96,59 @@ renderBookmarks(bookmarksArray, bookmarks);
 
 const renderBooks = function (arr, html) {
     arr.forEach(book => {
-        let bookCard = document.createElement("li");
-        let card__body = document.createElement("div");
-        let card__btns = document.createElement("div");
-        let card__img = document.createElement("img");
-        let card__title = document.createElement("h3");
-        let card__sub = document.createElement("p");
-        let card__year = document.createElement("span");
-        let card__btn1 = document.createElement("a");
-        let card__btn2 = document.createElement("a");
-        let card__btn_big = document.createElement("a");
+        try {
+            let bookCard = document.createElement("li");
+            let card__body = document.createElement("div");
+            let card__btns = document.createElement("div");
+            let card__img = document.createElement("img");
+            let card__title = document.createElement("h3");
+            let card__sub = document.createElement("p");
+            let card__year = document.createElement("span");
+            let card__btn1 = document.createElement("a");
+            let card__btn2 = document.createElement("a");
+            let card__btn_big = document.createElement("a");
 
-        // attribute
-        bookCard.setAttribute("class", "book");
-        card__body.setAttribute("class", "book__body");
-        card__img.setAttribute("class", "book__img");
-        card__title.setAttribute("class", "book__title");
-        card__sub.setAttribute("class", "book__sub");
-        card__year.setAttribute("class", "book__");
-        card__btns.setAttribute("class", "book__btns");
-        card__btn1.setAttribute("class", "btn1");
-        card__btn2.setAttribute("class", "btn2");
-        card__btn_big.setAttribute("class", "book__btn_big");
+            // attribute
+            bookCard.setAttribute("class", "book");
+            card__body.setAttribute("class", "book__body");
+            card__img.setAttribute("class", "book__img");
+            card__title.setAttribute("class", "book__title");
+            card__sub.setAttribute("class", "book__sub");
+            card__year.setAttribute("class", "book__");
+            card__btns.setAttribute("class", "book__btns");
+            card__btn1.setAttribute("class", "btn1");
+            card__btn2.setAttribute("class", "btn2");
+            card__btn_big.setAttribute("class", "book__btn_big");
 
-        // tetxtContent
-        card__img.src = book.volumeInfo.imageLinks?.thumbnail;
-        card__title.textContent = book?.volumeInfo?.title;
-        card__sub.textContent = book.volumeInfo.authors || "No Info About Author";
-        card__year.textContent = book?.volumeInfo?.publishedDate;
-        card__btn1.textContent = "Bookmark";
-        card__btn2.textContent = "More Info";
-        card__btn_big.textContent = "Read";
-        card__btn_big.href = book?.volumeInfo?.previewLink;
-        card__btn_big.target = "_blank";
+            // tetxtContent
+            card__img.src = book.volumeInfo.imageLinks?.thumbnail;
+            card__title.textContent = book?.volumeInfo?.title;
+            card__sub.textContent = book.volumeInfo.authors || "No Info About Author";
+            card__year.textContent = book?.volumeInfo?.publishedDate;
+            card__btn1.textContent = "Bookmark";
+            card__btn2.textContent = "More Info";
+            card__btn_big.textContent = "Read";
+            card__btn_big.href = book?.volumeInfo?.previewLink;
+            card__btn_big.target = "_blank";
 
 
-        // DATASET
-        card__btn_big.dataset.infoButtonId = book.id;
-        card__btn1.dataset.bookmarkId = book.id;
+            // DATASET
+            card__btn_big.dataset.infoButtonId = book.id;
+            card__btn1.dataset.bookmarkId = book.id;
 
-        // append
-        bookCard.appendChild(card__img);
-        bookCard.appendChild(card__body);
-        bookCard.appendChild(card__btns);
-        card__body.appendChild(card__title);
-        card__body.appendChild(card__sub);
-        card__body.appendChild(card__year);
-        card__btns.appendChild(card__btn1);
-        card__btns.appendChild(card__btn2);
-        bookCard.appendChild(card__btn_big);
+            // append
+            bookCard.appendChild(card__img);
+            bookCard.appendChild(card__body);
+            bookCard.appendChild(card__btns);
+            card__body.appendChild(card__title);
+            card__body.appendChild(card__sub);
+            card__body.appendChild(card__year);
+            card__btns.appendChild(card__btn1);
+            card__btns.appendChild(card__btn2);
+            bookCard.appendChild(card__btn_big);
 
-        html.appendChild(bookCard);
+            html.appendChild(bookCard);
+        } catch (er) { alert(er) }
     })
 }
 
@@ -347,12 +349,14 @@ orderBtn.addEventListener("click", function () {
 
 
 const extractData = async function () {
-    const request = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${seacrh}&startIndex=${page}&maxResults=9&orderBy=${order}`);
-    const response = await request.json();
-    booksArray = response.items;
-    result.textContent = response.totalItems;
-    renderButtons(response.totalItems, elPags)
-    renderBooks(booksArray, booksList);
+    try {
+        const request = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${seacrh}&startIndex=${page}&maxResults=9&orderBy=${order}`);
+        const response = await request.json();
+        booksArray = response.items;
+        result.textContent = response.totalItems;
+        renderButtons(response.totalItems, elPags)
+        renderBooks(booksArray, booksList);
+    }
+    catch (er) { alert('Something went wrong!') }
 }
-
 extractData();
