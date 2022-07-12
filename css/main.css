@@ -1,7 +1,212 @@
 *{
-    font-family: "Montserrat";
+    font-family: "Rubik", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     outline: none;
+    border: none;
+}
+ul,li{list-style-type: none;}
+a{text-decoration: none;}
+img{display: block;}
+.container{
+    width: 1800px;
+    margin: 0 auto;
+}
+label{position: relative;}
+.fa-solid{
+    position: absolute;
+    top:33px;
+    left: 475px;
+    font-size: 23px;
+    color: #B8B9BE;
+}
+header{
+    border-bottom:1px solid #E3E6EB;
+}
+nav{
+    padding: 20px 0px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+::placeholder{font-family: "Montserrat";font-size: 15px;}
+.searchInput{
+    margin-right: 300px;
+    width: 700px;
+    background-color: #E3E6EB;
+    border-radius: 30px;
+    padding: 17px 20px;
+    padding-left: 50px;
+}
+.searchInput::placeholder{font-family: "Rubik";}
+.logout{
+    cursor: pointer;
+    color: white;
+    padding: 15px 30px;
+    background-color: #0D75FF;
+    border-radius: 4px;
+}
+
+
+.results_sorting{
+    border-bottom:1px solid #E3E6EB;
+    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+
+.orderBtn > img{display: inline;}
+.orderBtn{
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    gap: 10px;
+    padding: 9px 10px;
+    background-color: #A6B0C3;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+h1{font-weight: 400;}
+.main__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+.main__bookmarks{
+    overflow: auto;
+    height: 82.6vh;
+    padding-top: 30px;
+    width: 18%;
+    border-right: 1px solid #e3e6eb;
+}
+.bookmarks__text{margin: 12px 0px 30px 0px;}
+.bookmark{
+    margin-bottom: 12px;
+    padding: 0px 20px;
+    width: 250px;
+    height: 80px;
+    background-color:#F8FAFD;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.bookmark__title{
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+.bookmark__sub{
+    font-size: 14px;
+    color: #757881;
+}
+.bookmark__images{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+
+
+.main__books{
+    background-color: #F8FAFD;
+    display: flex;
+    flex-wrap: wrap;
+    width: 82%;
+    height: 82.6vh;
+}
+
+.booksList{
+    overflow: auto;
+    margin-top: 40px;
+    margin-left: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 33px;
+    height: 94%;
+}
+.booksList::-webkit-scrollbar{
+    border: none;
+}
+.booksList::-webkit-scrollbar-track{
+    background-color: gray;
+    border-radius: 4px;
+}
+.booksList::-webkit-scrollbar-thumb{
+    background-color: rgb(211, 226, 0);
+    border-radius: 4px;
+}
+.book{
+    padding-bottom: 13px;
+    width: 350px;
+    height: 450px;
+    background-color: white;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.book__img{
+    margin-top: 13px;
+    width: 210px;
+    height: 201px;
+    align-self: center;
+    margin-bottom: 15px;
+    padding: 18px 25px;
+    border-radius: 5px;
+    background-color: #F8FAFD;
+}
+.book__body{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.book__title{
+    height: 40px;
+    overflow: auto;
+    font-size: 18px;
+}
+.book__title::-webkit-scrollbar{border: none;}
+.book__sub{
+    font-size: 13px;
+    color: #757881;
+    margin: 5px 0px;
+}
+.book__year{
+    color: #757881;
+}
+
+.book__btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 15px;
+    gap: 5px;
+}
+.btn1{
+    width: 50%;
+    color: black;
+    background-color: #FFD80D;
+}
+.btn2{
+    width: 50%;
+    color: rgb(0, 26, 255);
+    font-weight: 500;
+    background-color: #0D75FF0D;
+}
+.book__btn_big{
+    margin-top: 5px;
+    color: white;
+    width: 90%;
+    margin-inline: 15px;
+    background-color: #75828A;
+}
+.btn1,.btn2,.book__btn_big{
+    border-radius: 4px;
+    padding: 10px 25px;
+    cursor: pointer;
+    text-align: center;
 }

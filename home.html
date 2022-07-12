@@ -4,11 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
     <title>Home Page</title>
 </head>
 <body>
-    <button class="logout">Logout</button>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#"><img src="./img/logo-main.png" alt="image-of-logo"></a>
+                <form class="form">
+                    <label></label><i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" name="search" placeholder="Search books" class="searchInput">
+                </form>
+                <button class="logout">Logout</button>
+            </nav>
+        </div>
+    </header>
+            <section class="results_sorting">
+                <p>Showing <span class="showing"></span></p>
+                <p class="">Result(s): <span class="result"></span></p>
+                <button class="orderBtn"><img src="./img/calendar.png" alt="an image of calendar">Order by newest</button>
+            </section>
+            <main>
+                <div class="container">
+                    <div class="main__wrapper">
+                        <div class="main__bookmarks">
+                            <h1>Bookmarks</h1>
+                            <p class="bookmarks__text">If you don't like to read, you <br> haven’t found the right book</p>
+                            <ul class="bookmarksList"></ul>
+                        </div>
+                        <div class="main__books">
+                            <ul class="booksList"></ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
     <script src="./js/script.js"></script>
 </body>
 </html>

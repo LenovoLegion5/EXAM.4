@@ -23,7 +23,7 @@ elForm.addEventListener("submit", function (e) {
             }
         )
     }).then(res => res.json()).then(data => {
-        if (data.token) {
+        if (data.token && password === 'NajotTalim') {
             window.localStorage.setItem("token", data.token);
             window.location.replace("home.html")
         } else {
